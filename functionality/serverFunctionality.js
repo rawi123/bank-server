@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const getAllUsers = () => {
     try {
-        const buffer = fs.readFileSync("users.json");
+        const buffer = fs.readFileSync("./users.json");
         return (JSON.parse(buffer.toString()));
     }
     catch {
@@ -12,7 +12,7 @@ const getAllUsers = () => {
 
 const updateAllUsers = (users) => {
     try {
-        fs.writeFileSync("users.json", JSON.stringify(users));
+        fs.writeFileSync("./users.json", JSON.stringify(users));
         return true;
     }
     catch {
