@@ -10,9 +10,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors({
-    origin:"https://bank-client-rawi.herokuapp.com/"
-}));
+app.use(cors());
 
 app.get("/", (req, res) => {//get all users
     res.status(200).send(serverFunc.getAllUsers());
